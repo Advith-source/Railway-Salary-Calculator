@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b63"><meta name="description" content="7th CPC Railway Salary Calculator">
+<title>Railway Salary Calculator</title><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
+</head><body><main class="app">
+<header><div class="icon">₹</div><div><small>7th CPC · INDIAN RAILWAYS</small><h1>Railway Salary Calculator</h1><p>Monthly salary estimate in INR</p></div></header>
+<section class="panel"><h2>Salary details</h2>
+<label for="basic">1. Basic Pay (₹)</label><input id="basic" type="number" min="0" value="44900">
+<div class="two"><div><label for="da">2. DA (%)</label><input id="da" type="number" min="0" value="60" step="0.01"></div><div><label for="hra">3. HRA (%)</label><input id="hra" type="number" min="0" value="20" step="0.01"></div></div>
+<label for="other">Other deductions (₹)</label><input id="other" type="number" min="0" value="21150">
+<p class="note"><b>Formulas</b><br>DA = Basic × DA% · HRA = Basic × HRA%<br>Transport Allowance = ₹1,800 × (1 + DA rate)<br>NPS = 10% × (Basic + DA) · State Tax = ₹330</p></section>
+<section class="result"><small>ESTIMATED MONTHLY NET SALARY</small><output id="net">₹0</output><p>Gross salary: <b id="grossTop">₹0</b></p></section>
+<section class="panel"><h2>Earnings breakdown</h2>
+<div class="row"><span>Basic Pay</span><b id="basicOut"></b></div><div class="row"><span>Dearness Allowance</span><b id="daOut"></b></div><div class="row"><span>House Rent Allowance</span><b id="hraOut"></b></div><div class="row"><span>Transport Allowance (incl. DA)</span><b id="taOut"></b></div><div class="row total"><span>Gross Salary</span><b id="gross"></b></div></section>
+<section class="panel"><h2>Deductions breakdown</h2><div class="row"><span>NPS (10% of Basic + DA)</span><b id="npsOut"></b></div><div class="row"><span>State Tax</span><b id="taxOut">₹330</b></div><div class="row"><span>Other Deductions</span><b id="otherOut"></b></div><div class="row total"><span>Total Deductions</span><b id="deductions"></b></div><div class="row netrow"><span>Net Salary</span><b id="netBottom"></b></div></section>
+<div class="buttons"><button id="copy">Copy salary breakdown</button><button id="reset" class="secondary">Reset to example values</button><button id="install" class="secondary" hidden>Install app</button></div><p id="message" aria-live="polite"></p><footer>Estimate based on your specified formulas. Actual payroll may differ based on applicable rules and deductions.</footer>
+</main><script src="./app.js" defer></script></body></html>
